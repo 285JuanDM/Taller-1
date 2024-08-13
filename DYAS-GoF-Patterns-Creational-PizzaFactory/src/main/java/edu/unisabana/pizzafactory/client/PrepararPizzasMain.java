@@ -35,19 +35,20 @@ public class PrepararPizzasMain {
             System.out.println("3. Pizza Integral");
             System.out.println("4. Salir");
             int opcion = scanner.nextInt();
+            Tamano tamano = ppm.escogerTamano();
 
             switch (opcion) {
                 case 1:
                     maquina = factoryDelgada.crearMaquina();
-                    ppm.prepararPizza(maquina, ingredientes, Tamano.MEDIANO);
+                    ppm.prepararPizza(maquina, ingredientes, tamano);
                     break;
                 case 2:
                     maquina = factoryGruesa.crearMaquina();
-                    ppm.prepararPizza(maquina, ingredientes, Tamano.MEDIANO);
+                    ppm.prepararPizza(maquina, ingredientes, tamano);
                     break;
                 case 3:
                     maquina = factoryIntegral.crearMaquina();
-                    ppm.prepararPizza(maquina, ingredientes, Tamano.PEQUENO);
+                    ppm.prepararPizza(maquina, ingredientes, tamano);
                     break;
                 case 4:
                     System.out.println("Saliendo...");
@@ -56,6 +57,24 @@ public class PrepararPizzasMain {
                 default:
                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
             }
+        }
+    }
+
+    public Tamano escogerTamano() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Seleccione el tamaño de la pizza:");
+        System.out.println("1. Pequeño");
+        System.out.println("2. Mediano");
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                return Tamano.PEQUENO;
+            case 2:
+                return Tamano.MEDIANO;
+            default:
+                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                return escogerTamano();
         }
     }
 
