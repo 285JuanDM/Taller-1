@@ -35,6 +35,13 @@ public class PrepararPizzasMain {
             System.out.println("3. Pizza Integral");
             System.out.println("4. Salir");
             int opcion = scanner.nextInt();
+
+            if (opcion == 4) {
+                System.out.println("Saliendo...");
+                scanner.close();
+                return;
+            }
+
             Tamano tamano = ppm.escogerTamano();
 
             switch (opcion) {
@@ -50,10 +57,6 @@ public class PrepararPizzasMain {
                     maquina = factoryIntegral.crearMaquina();
                     ppm.prepararPizza(maquina, ingredientes, tamano);
                     break;
-                case 4:
-                    System.out.println("Saliendo...");
-                    scanner.close();
-                    return;
                 default:
                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
             }
