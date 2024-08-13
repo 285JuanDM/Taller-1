@@ -3,8 +3,8 @@
 
 ## UML ejercicio de las Pizzas
 
-![UML Ejercicio 1][Taller1PizzaUML.png]
+![UML Ejercicio 1](Taller1PizzaUML.png)
 
 ## UML ejercicio del juego
 
-![UML ejericicio 2][GameUML.png]
+![UML ejericicio 2](GameUML.png)
